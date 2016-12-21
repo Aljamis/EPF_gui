@@ -1,0 +1,6 @@
+Nov 28, 2016
+replaced json-simple with Jackson 2.8.5
+required 3 JARs
+	- jackson-core
+	- jackson-annotations
+	- jackson-databind
