@@ -1,5 +1,8 @@
 package application;
 	
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -21,10 +24,27 @@ public class Main extends Application {
 //			primaryStage.show();
 			
 			this.primaryStage = primaryStage;
-			this.primaryStage.setTitle("USPS EPF Website Access");
+//			this.primaryStage.setTitle("USPS EPF Website Access");
 			
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( Main.class.getResource("/EPF.fxml"));
+			
+			/*  Load Resources */
+//			Locale loc = Locale.FRENCH;
+//			Locale loc = new Locale("es", "ES");
+			Locale loc = Locale.getDefault();
+//			Locale loc = new Locale("xx", "XX");
+			loader.setResources(ResourceBundle.getBundle("resources.EPF_gui" , loc) );
+			
+			
+			/* Window Title getting version from package */
+			String title = loader.getResources().getString("Screen.Title") 
+					+" - v "
+					+ EPF_guiVersion.getVersion()
+					+" ("+ loc.getDisplayLanguage() +")"
+					;
+			this.primaryStage.setTitle( title );
+			
+			loader.setLocation( Main.class.getResource("/EPF.fxml") );
 			rootLayout = (AnchorPane)loader.load();
 			
 			Scene scene = new Scene(rootLayout);

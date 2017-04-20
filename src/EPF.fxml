@@ -39,8 +39,8 @@
       </MenuBar>
       <Label layoutX="14.0" layoutY="39.0" text="User / PWD " />
       <Label layoutX="234.0" layoutY="39.0" text="/" />
-      <TextField id="txtUser" fx:id="txtUser" layoutX="85.0" layoutY="35.0" />
-      <PasswordField id="txtPwd" fx:id="txtPwd" layoutX="239.0" layoutY="35.0" />
+      <TextField id="txtUser" fx:id="txtUser" layoutX="85.0" layoutY="35.0" promptText="%Login.User" />
+      <PasswordField id="txtPwd" fx:id="txtPwd" layoutX="239.0" layoutY="35.0" promptText="%Login.PWD"/>
       
       <Button fx:id="btnLogin" layoutX="468.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleLoginButtonAction" text="Login" />
       <Button fx:id="btnLogout" layoutX="491.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleLogoutButtonAction" text="Logout" visible="false" />
